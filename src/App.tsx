@@ -1,11 +1,28 @@
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import TodoApp from "./components/TodoApp";
 
 function App() {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>React + TypeScript Todo App</h1>
+    <div style={{ textAlign: "center", padding: "20px" }}>
+      <nav style={{ marginBottom: "20px" }}>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
 
-      <TodoApp />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <TodoApp />
+            </>
+          }
+        />
+
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
