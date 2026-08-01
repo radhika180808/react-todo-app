@@ -2,7 +2,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import TodoApp from "./components/TodoApp";
+import CreateUser from "./components/CreateUser";
 import Users from "./components/Users";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
             <>
               <Home />
               <TodoApp />
+              <CreateUser />
               <Users />
             </>
           }
