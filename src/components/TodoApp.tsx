@@ -1,8 +1,9 @@
 import { useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function TodoApp() {
     const [task, setTask] = useState("");
-    const [todos, setTodos] = useState<string[]>([]);
+    const [todos, setTodos] = useLocalStorage<string[]>("todos", []);
 
     function addTodo() {
         if (task.trim() === "") return;
